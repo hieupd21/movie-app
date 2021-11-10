@@ -1,9 +1,10 @@
 import axios from "axios";
-import queryString from "queryString";
+import queryString from "query-string";
 import apiConfig from "./apiConfig";
 
+axios.defaults.baseURL = "https://api.themoviedb.org/3/";
+
 const axiosClient = axios.create({
-  baseUrl: apiConfig.baseUrl,
   headers: {
     "Content-Type": "application/json",
   },

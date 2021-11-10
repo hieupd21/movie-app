@@ -1,17 +1,17 @@
 import axiosClient from "./axiosClient";
 
-const category = {
+export const category = {
   movie: "movie",
   tv: "tv",
 };
 
-const movieType = {
+export const movieType = {
   upcoming: "upcoming",
   popular: "popular",
   top_rated: "top_rated",
 };
 
-const tvType = {
+export const tvType = {
   popular: "popular",
   top_rated: "top_rated",
   on_the_air: "on_the_air",
@@ -31,10 +31,10 @@ const tmdbApi = {
   },
 
   // Video theo phim hoặc TV show
-  getMovieVideos: (cate, id) => {
+  getVideos: (cate, id) => {
     const url = `${category[cate]}/${id}/videos`;
-    // return axiosClient.get(url, { params: {} });
-    return axiosClient.get(url);
+    return axiosClient.get(url, { params: {} });
+    // return axiosClient.get(url);
   },
 
   search: (cate, params) => {

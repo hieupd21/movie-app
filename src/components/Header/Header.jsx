@@ -42,8 +42,9 @@ const Header = () => {
     <div className="header" ref={headerRef}>
       <div className="header__wrap container">
         <div className="logo">
-          <Link to="/">
+          <Link to="/" className="logo__wrap">
             <img src={logo} alt="" />
+            <p>NITFLEX</p>
           </Link>
         </div>
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
+import "./Modal.scss";
 
 Modal.propTypes = {
   active: PropTypes.bool,
@@ -15,7 +16,7 @@ function Modal(props) {
 
   return (
     <div id={props.id} className={`modal ${active ? "active" : ""}`}>
-      Modal
+      {props.children}
     </div>
   );
 }
@@ -31,8 +32,9 @@ export const ModalContent = (props) => {
   return (
     <div ref={contentRef} className="modal__content">
       <div className="modal__content__close" onClick={closeModal}>
-        <i class="bx bx-x"></i>
+        <i className="bx bx-x"></i>
       </div>
+      {props.children}
     </div>
   );
 };
